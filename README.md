@@ -1,5 +1,5 @@
 cleanvbase2
-###########
+===========
 
 Cleans up a VBASE2 Fasta file to produce a file with identifiers using
 standard gene names instead of VBASE2's own identifiers.
