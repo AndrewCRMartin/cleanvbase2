@@ -52,8 +52,16 @@ if(open(my $fp, '<', $ARGV[0]))
         {
             $printInfo = "|$printInfo";
         }
-        print ">$keyIDs{$id}|$printID$printInfo\n";
-        print "$seqs{$id}\n" if(!defined($::noseqs));
+
+        my $header = ">$keyIDs{$id}|$printID$printInfo";
+        if(defined($::noseqs))
+        {
+            print "$header\n";
+        }
+        else
+        {
+            fasta::PrintFasta(\*STDOUT, $header, $seqs{$id}, 60);
+        }
     }
 
 }
